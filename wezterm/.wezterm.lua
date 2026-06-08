@@ -7,14 +7,18 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
-config.font_size = 16
+config.font_size = 13
 
 config.enable_tab_bar = false
 
 config.window_decorations = "RESIZE"
 
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.9
 config.macos_window_background_blur = 10
+
+-- German keyboard: let the right Option key (AltGr) compose real symbols
+-- like | \ @ { [ ~ instead of acting as Meta. Left Option stays Meta.
+config.send_composed_key_when_right_alt_is_pressed = true
 
 -- my coolnight colorscheme:
 config.colors = {

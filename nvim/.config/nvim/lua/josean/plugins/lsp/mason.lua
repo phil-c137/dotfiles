@@ -14,6 +14,7 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
+        "tinymist", -- typst language server
         -- "eslint",
       },
     },
@@ -43,6 +44,7 @@ return {
         "black", -- python formatter
         "pylint",
         "eslint_d",
+        "typstyle", -- typst formatter
       },
     },
     dependencies = {
