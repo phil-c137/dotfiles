@@ -21,6 +21,35 @@ cd ~/dotfiles
 
 `install.sh` installs the dependencies for your OS, then symlinks every package into `$HOME`. It is safe to rerun. Open nvim once afterward so lazy.nvim can install the plugins.
 
+## Machine-local files
+
+Two files are intentionally kept out of version control because they hold secrets. Recreate them on each new machine after stowing, otherwise your git credentials and shell secrets will be missing.
+
+`~/.gitconfig.local` holds credentials and per-machine git settings. The tracked `.gitconfig` pulls it in through an `include`, so anything you put here is read automatically.
+
+```ini
+# ~/.gitconfig.local
+[credential "https://git.overleaf.com"]
+	username = your-email@example.com
+	helper = store
+```
+
+`~/.zsh_secrets` holds API keys and tokens. The tracked `.zshrc` sources it on startup when it exists.
+
+```sh
+# ~/.zsh_secrets
+export OPENAI_API_KEY="..."
+export SOME_OTHER_TOKEN="..."
+```
+
+Neither file needs stow. Both live directly in `$HOME` and are loaded by the configs already linked.
+
+Yazi plugins and flavors are untracked as well. Reinstall them from the tracked `package.toml`.
+
+```sh
+ya pack -i
+```
+
 ## Manual setup
 
 If you would rather do it by hand, install `git`, `stow`, `neovim`, `tmux`, and `wezterm`, then run stow from the repo root.
