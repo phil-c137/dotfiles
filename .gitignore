@@ -1,1 +1,13 @@
 .DS_Store
+
+# Never commit secrets or machine-local credential files
+.zsh_secrets
+.gitconfig.local
+.git-credentials
+*.pem
+*_rsa
+*_ed25519
+
+# Yazi plugins and flavors are reinstalled from package.toml with 'ya pack -i'
+yazi/.config/yazi/plugins/
+yazi/.config/yazi/flavors/

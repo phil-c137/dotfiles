@@ -1,0 +1,15 @@
+[user]
+	name = Philipp Hofmann
+	email = philipp.hofmann@iws.uni-stuttgart.de
+[core]
+	editor = vim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
+# Machine-local settings and credentials live here, kept out of version control.
+[include]
+	path = ~/.gitconfig.local

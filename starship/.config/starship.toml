@@ -1,0 +1,12 @@
+# Show full path instead of just current directory
+[directory]
+truncation_length = 5
+
+# Show git branch with custom symbol
+[git_branch]
+symbol = " "
+
+# Show pixi environment
+[conda]
+symbol = " "
+format = "[$symbol$environment]($style) "
